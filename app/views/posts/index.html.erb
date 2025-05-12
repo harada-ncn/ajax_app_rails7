@@ -1,7 +1,7 @@
 <h1>メモ投稿</h1>
-<%= form_with url: "/posts", method: :post, id: "form" do |form| %>
-  <%= form.text_field :content %>
-  <%= form.submit "投稿", id: "submit" %>
+<%= form_with url: "/posts", method: :post, id: "form" do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit "投稿", id: "submit" %>
 <% end %>
 
 <div id ="list">
@@ -9,11 +9,11 @@
 
 <% @posts.each do |p| %>
   <div class = "post">
-    <div class = "post-data">
+    <div class = "post-date">
       投稿日時:<%= p.created_at %>
     </div>
     <div class = "post-content">
       <%= p.content %>
     </div>
-  <\div>
+  </div>
 <% end %>
