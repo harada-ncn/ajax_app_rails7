@@ -12,10 +12,10 @@ const buildHTML = (XHR) => {
         return html;
 }
 function post (){
-  const formform =document.getElementById("form");
-  formform.addEventListener("submit", (e) => {
+  const form =document.getElementById("form");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const formData = new FormData(formform);
+    const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
     XHR.open("post", "/posts", true);
     XHR.responseType = "json";
@@ -31,5 +31,5 @@ function post (){
       formText.value = "";
     };
   });
-};
+}
 window.addEventListener('turbo:load', post);
